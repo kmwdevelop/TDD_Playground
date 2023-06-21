@@ -56,7 +56,7 @@ void main() {
     // Finder passwordTextField = find.byKey(const ValueKey("password_id"));
     Finder loginButton = find.byType(ElevatedButton);
 
-    // Assert
+    // Assert 테스트커밋
     expect(loginButton, findsOneWidget);
   });
 
