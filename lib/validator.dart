@@ -12,4 +12,20 @@ class Validator {
 
     return "Success";
   }
+
+  static String? validatePassword(String password) {
+    if (password.isEmpty) {
+      return "Required Field";
+    }
+
+    // 최소 8자, 문자 >= 1, 숫자 >= 1, 특수문자 >= 1:
+    String pattern = r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$";
+
+    if (!RegExp(pattern).hasMatch(password)) {
+      return "Please enter a valid password";
+    }
+
+    return "Success";
+
+  }
 }

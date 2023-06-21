@@ -27,5 +27,32 @@ void main() {
       // Assert
       expect(result, "Success");
     });
+
+
+
+    test('validate for empty password', () {
+      // Arrange
+      var result = Validator.validatePassword('');
+
+      // Assert
+      expect(result, "Required Field");
+    });
+
+    test('validate for invalid password', () {
+      // Arrange
+      var result = Validator.validatePassword("12");
+
+      // Assert
+      expect(result, "Please enter a valid password");
+    });
+
+    test('validate for valid password', () {
+      // Arrange
+      var result = Validator.validatePassword("1127121!@");
+
+      // Assert
+      expect(result, "Please enter a valid password");
+    });
+
   });
 }
